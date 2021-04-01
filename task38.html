@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Task38</title>
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h5>Extract the first half of a string of even length</h5>
+        <form>
+            <div class="form-group">
+                <label for="user-string">Old String</label>
+                <input type="text" class="form-control offset-4 col-sm-4" id="user-string" placeholder="Enter the string">
+            </div>
+            <button type="button" class="btn btn-success" onclick="firstHalfOfString()">
+                click here
+            </button>
+        </form>
+        <div id="statement-div" style="display: none;font-size: 30px;">
+            <h3 class="text-dark mt-4" >New String</h3>
+            <p id="count" class="text-info mt-4" ></p>
+        </div>
+    </div>
+    <script>
+        function firstHalfOfString() 
+        {
+            document.getElementById("statement-div").style.display = "block";
+            var userString = document.getElementById("user-string").value;
+            var newString = userString.substring(0,(userString.length)/2);
+            document.getElementById("count").innerHTML = "The First half of your string is " + newString;
+        }
+    </script>
+    </body>
+</html>

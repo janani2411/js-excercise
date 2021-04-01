@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Task48</title>
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h5>Replace every character in a given string with the character following it in the alphabet</h5>
+        <form>
+            <div class="form-group">
+                <label for="old-string">Old String</label>
+                <input type="text" class="form-control offset-4 col-sm-4" id="old-string" placeholder="Enter the string">
+            </div>
+            <button type="button" class="btn btn-success" onclick="replaceEveryCharacterToNext()">
+                click here
+            </button>
+        </form>
+        <div id="new-string-div" style="display: none;font-size: 30px;">
+            <h3 class="text-dark mt-4">New String</h3>
+            <p id="new-string" class="text-info mt-4"></p>
+        </div>
+    <script>
+       function replaceEveryCharacterToNext() 
+       {
+            document.getElementById("new-string-div").style.display = "block";
+            var userString = document.getElementById("old-string").value;
+            var tempString = userString.split('');
+            for (var i = 0; i < tempString.length; i++) 
+            {
+                switch(tempString[i])
+                {
+                    case ' ':
+                        break;
+                    case 'z':
+                    tempString[i] = 'a';
+                        break;
+                    case 'Z': 
+                    tempString[i] = 'A';
+                        break;
+                    default:
+                    tempString[i] = String.fromCharCode(1 + tempString[i].charCodeAt(0));
+                }
+                switch(tempString[i]) 
+                {
+                    case 'a': case 'e': case 'i': case 'o': case 'u':
+                    tempString[i] = tempString[i].toUpperCase();
+                }
+            }
+            var newString = tempString.join('');
+            document.getElementById("new-string").innerHTML = newString;
+        }
+        </script>
+    </body>
+</html>

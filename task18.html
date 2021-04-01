@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Task18</title>
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h1>Add first character of a given string at front and back of it</h1>
+        <form>
+            <div class="form-group">
+                <label for="old-string">Old String</label>
+                <input type="text" class="form-control offset-4 col-sm-4" id="old-string" placeholder="Enter the string">
+            </div>
+            <button type="button" class="btn btn-success" onclick="addCharAtFrontAndBack()">
+                click here
+            </button>
+        </form>
+        <div id="new-string-div" style="display: none;font-size: 30px;">
+            <h3 class="text-dark mt-4" >New String</h3>
+            <p id="new-string" class="text-danger mt-4" ></p>
+        </div>
+    </div>
+    <script>
+        function addCharAtFrontAndBack()
+        {
+            document.getElementById("new-string-div").style.display = "block";
+            var oldString = document.getElementById("old-string").value;
+            var character = oldString.substring(0,1);
+            var newString = character + oldString + character;
+            document.getElementById("new-string").innerHTML = newString ;
+        }
+    </script>
+    </body>
+</html>

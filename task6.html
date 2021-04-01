@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Task6</title>
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h1>GUESS NUMBER</h1>
+        <p class="text-info" id="result" style="display:none;font-size: 30px;">Your Result is here soon....</p>
+        <button type="button" class="btn btn-success" onclick="guessNUmber()">
+            click here to enter number
+        </button>
+    </div>
+    <script>
+        function guessNUmber()
+        {
+            document.getElementById("result").style.display="block";
+            var num = prompt("guess the number that matches with random number from 1-10");
+            
+            var random = Math.floor(Math.random() * 10);
+            if(num == random)
+            {
+                document.getElementById("result").innerHTML = "Awesome !,Good Work";
+            }
+            else
+            {
+                document.getElementById("result").innerHTML = "Sorry , Not Matched.Good Luck, Next Time";
+            }
+        }
+    </script>
+    </body>
+</html>

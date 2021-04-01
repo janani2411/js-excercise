@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Task10</title>
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h1>ABSOLUTE DIFFERENCE OF 13</h1>
+        <form>
+            <div class="form-group">
+                <label for="num">Your Number</label>
+                <input type="text" class="form-control offset-4 col-sm-4" id="num" placeholder="Enter the your number">
+            </div>
+            <button type="button" class="btn btn-success" onclick="absoluteDifference()">
+                click here
+            </button>
+        </form>
+        <p id="show" class="text-danger mt-5" style="font-size: 30px;"></p>
+       
+    </div>
+    <script>
+        function absoluteDifference()
+        {
+            var userNumber = document.getElementById("num").value;
+            var difference = (userNumber - 13);
+            if(difference > 13)
+            {
+                document.getElementById("show").innerHTML ="The absolute difference of your number with 13 is "+ difference * 2;
+            }
+            else
+            {
+                document.getElementById("show").innerHTML ="The absolute difference of your number with 13 is "+ Math.abs(difference);
+            }
+        }
+    </script>
+    </body>
+</html>

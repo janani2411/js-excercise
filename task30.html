@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Task30</title>
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h5>Check from three given integers that whether a number is greater than or equal to 20 and less than one of the others</h5>
+        <form>
+            <div class="form-group">
+                <label for="first-num">First Number</label>
+                <input type="text" class="form-control offset-4 col-sm-4" id="first-num" placeholder="Enter the your first number">
+            </div>
+            <div class="form-group">
+                <label for="second-num">Second Number</label>
+                <input type="text" class="form-control offset-4 col-sm-4" id="second-num" placeholder="Enter the your second number">
+            </div>
+            <div class="form-group">
+                <label for="third-num">Second Number</label>
+                <input type="text" class="form-control offset-4 col-sm-4" id="third-num" placeholder="Enter the your third number">
+            </div>
+            <button type="button" class="btn btn-success" onclick="checkThreeNumbers()">
+                click here
+            </button>
+        </form>
+        <p id="show" class="text-info mt-5" style="font-size: 25px;"></p>
+       
+    </div>
+    <script>
+        function checkThreeNumbers()
+        {
+            var firstNumber = document.getElementById("first-num").value;
+            var secondNumber = document.getElementById("second-num").value;
+            var thirdNumber = document.getElementById("third-num").value;
+            var result  = (firstNumber >= 20 && (firstNumber < secondNumber || firstNumber < thirdNumber)) ||
+                            (secondNumber >= 20 && (secondNumber < firstNumber || secondNumber < thirdNumber)) ||
+                            (thirdNumber >= 20 && (thirdNumber < secondNumber || thirdNumber < firstNumber));
+            if(result == true)
+            {
+                document.getElementById("show").innerHTML = "The numbers are satisfied the conditions";
+            }
+            else
+            {
+                document.getElementById("show").innerHTML = "The numbers are not satisfied the conditions";
+            }
+        }
+    </script>
+    </body>
+</html>

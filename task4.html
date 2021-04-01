@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Task4</title>
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h1>String Rotation</h1>
+        <form>
+            <div class="form-group">
+                <label for="before-rotation">Before Rotation</label>
+                <input type="text" class="form-control offset-4 col-sm-4" id="before-rotation" placeholder="Enter the string to be rotated">
+              </div>
+              <button type="button" class="btn btn-success" onclick="stringRotation()">
+                click here
+            </button>
+            <p id="para" style="display:none"></p>
+        </form>
+        
+       
+    </div>
+    <script>
+      function stringRotation()
+        {
+            document.getElementById("para").style.display = "block";
+            var beforeRotation = document.getElementById("before-rotation").value;
+            var strLength = beforeRotation.length;
+            var lastStrLen = strLength -1;
+            var firstString ="";
+            var afterRotation = "";
+            for(var i = strLength;i >0; i--)
+            {
+                setInterval(
+                () =>{
+                
+                    firstString = beforeRotation[lastStrLen];
+                    afterRotation = firstString + beforeRotation.slice(0,-1);
+                    beforeRotation = afterRotation;
+                    console.log(afterRotation); 
+                    },100
+                );
+                
+            }
+        }
+    </script>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Task54</title>
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h5>Check whether a matrix is a diagonal matrix or not</h5>
+            <button type="button" class="btn btn-success" onclick="diagonalMatrixOrNot()">
+                click here
+            </button>
+        <div id="statement-div" style="display: none;font-size: 30px;">
+            <h3 class="text-dark mt-4" >New String</h3>
+            <p id="statement" class="text-info mt-4" ></p>
+        </div>
+    </div>
+    <script>
+        function diagonalMatrixOrNot() 
+        {
+            document.getElementById("statement-div").style.display = "block";
+            var array = [];
+            var row = Number(prompt("Enter the rows size"));
+            var col = Number(prompt("Enter the column size")); 
+            if(row != col)
+            {
+                document.getElementById("statement").innerHTML = "Please , Enter equal row size and matrix size ...";
+            }
+            else
+            {
+                var i;
+                var j;
+                for(i = 0;i < row; i++)
+                {
+                        array[i] = [];
+                }
+                for(i = 0;i < row; i++)
+                {
+                    for(j=0 ; j< col; j++)
+                    {
+                        array[i][j] = Number(prompt("Enter value - "+i+" "+j));
+                        
+                    }
+                }
+                var status = 1 ;
+                for (var i = 0; i < array.length; i++) 
+                {
+                    for (var j = 0; j < array.length; j++) 
+                    {
+                        if ((i !== j )&&( array[i][j] !== 0) )
+                        {
+                            status = 0;
+                        }
+                    }
+                }
+                if(status == 1)
+                {
+                    document.getElementById("statement").innerHTML = "The given matrix is Diagonal Matrix" ;
+                }
+                else
+                {
+                    document.getElementById("statement").innerHTML = "The given matrix is Not a Diagonal Matrix" ;
+                }
+            }
+        }
+    </script>
+    </body>
+</html>

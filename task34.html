@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Task34</title>
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h1>Convert number into Hours and Minutes</h1>
+        <form>
+            <div class="form-group">
+                <label for="user-number">Old String</label>
+                <input type="text" class="form-control offset-4 col-sm-4" id="user-number" placeholder="Enter the Number">
+            </div>
+            <button type="button" class="btn btn-success" onclick="convertTimeIntoHoursAndMinutes()">
+                click here
+            </button>
+        </form>
+        <div id="statement-div" style="display: none;font-size: 30px;">
+            <h3 class="text-dark mt-4" >New String</h3>
+            <p id="hours-minutes" class="text-danger mt-4" ></p>
+        </div>
+    </div>
+    <script>
+        function convertTimeIntoHoursAndMinutes()
+        { 
+            document.getElementById("statement-div").style.display = "block";
+            var userNumber = document.getElementById("user-number").value;
+            var hours = Math.floor(userNumber / 60);  
+            var minutes = userNumber % 60;
+            document.getElementById("hours-minutes").innerHTML = hours + " Hrs " + minutes + " Minutes";       
+        }
+    </script>
+    </body>
+</html>

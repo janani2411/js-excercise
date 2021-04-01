@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Task16</title>
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h1>REMOVE A CHARACTER AND RETURN NEW STRING</h1>
+        <form>
+            <div class="form-group">
+                <label for="old-string">Old String</label>
+                <input type="text" class="form-control offset-4 col-sm-4" id="old-string" placeholder="Enter the string">
+            </div>
+            <div class="form-group">
+                <label for="character">Character</label>
+                <input type="text" class="form-control offset-4 col-sm-4" id="character" placeholder="Enter the character to be removed">
+            </div>
+            
+            <button type="button" class="btn btn-success" onclick="removeCharacter()">
+                click here
+            </button>
+        </form>
+        <h3 class="text-dark mt-4">New String</h3>
+        <p id="new-string" class="text-danger mt-4" style="display: none;font-size: 30px;"></p>
+    </div>
+    <script>
+        function removeCharacter()
+        {
+            document.getElementById("new-string").style.display = "block";
+            var oldString = document.getElementById("old-string").value;
+            var character = document.getElementById("character").value;
+            var newString = oldString.replace(character,"");
+            document.getElementById("new-string").innerHTML = newString ;
+        }
+    </script>
+    </body>
+</html>

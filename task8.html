@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Task8</title>
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h1>Celsius and Fahrenheit Conversion</h1>
+        <p class="text-info" id="head">Choose your Choice</p>
+        <form>
+            <div class="form-group">
+                <label for="temp">Temperature</label>
+                <input type="text" class="form-control offset-4 col-sm-4" id="temp" placeholder="Enter the temperature">
+            </div>
+           
+            <button type="button" class="btn btn-success" onclick="farToCel()">
+                To Celsius
+            </button>
+            <button type="button" class="btn btn-success" onclick="celToFar()">
+                To Fahrenheit
+            </button>
+        </form>
+        <p id="result" class="mt-5" style="display:none;font-size: 30px;">Your Result is in console</p>
+    </div>
+    <script>
+        function farToCel()
+        {
+            var temperature = document.getElementById("temp").value;
+            var cel = Math.abs((32 - temperature)* (5/9));
+            console.log(temperature + " \u00B0F" + " to " + cel + " \u00B0C");
+            document.getElementById("result").style.display="block";
+        }
+        function celToFar()
+        {
+            var temperature = document.getElementById("temp").value;
+            var far = (temperature * (9/5)) +32;
+            console.log(temperature + " \u00B0C" + " to " + far + " \u00B0F");
+            document.getElementById("result").style.display="block";
+        }
+    </script>
+    </body>
+</html>

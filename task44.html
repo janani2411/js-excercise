@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Task44</title>
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h5>Find the larger value between the first or last and set all the other elements with that value</h5>
+            <button type="button" class="btn btn-success" onclick="setLargerValue()">
+                click here
+            </button>
+        <div id="statement-div" style="display: none;font-size: 30px;">
+            <h3 class="text-dark mt-4" >New String</h3>
+            <p id="new-array" class="text-info mt-4" ></p>
+        </div>
+    </div>
+    <script>
+        function setLargerValue() 
+        {
+            document.getElementById("statement-div").style.display = "block";
+            let array = [];
+            var n = prompt("Enter the size of an array"); 
+            for(var i = 0;i < n; i++)
+            {
+               array.push(Number(prompt("Enter value " + (i+1))));
+            }
+            var maxTemp = array[0];
+            for(var i = 1;i < n; i++)
+            {
+                if(array[i] > maxTemp)
+                {
+                    maxTemp = array[i];
+                    console.log(maxTemp);
+                }
+            } 
+            for(var i = 0 ;i < n; i++)
+            {
+                array[i] = maxTemp;
+            } 
+            document.getElementById("new-array").innerHTML = "[ " + array + " ]";
+        }
+    </script>
+    </body>
+</html>

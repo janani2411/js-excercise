@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Task14</title>
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h1>CHECK TWO NUMBERS</h1>
+        <form>
+            <div class="form-group">
+                <label for="first-num">First Number</label>
+                <input type="text" class="form-control offset-4 col-sm-4" id="first-num" placeholder="Enter the your first number">
+            </div>
+            <div class="form-group">
+                <label for="second-num">Second Number</label>
+                <input type="text" class="form-control offset-4 col-sm-4" id="second-num" placeholder="Enter the your second number">
+            </div>
+            <button type="button" class="btn btn-success" onclick="checkNumber()">
+                click here
+            </button>
+        </form>
+        <p id="show" class="text-danger mt-5" style="font-size: 30px;"></p>
+       
+    </div>
+    <script>
+        function checkNumber()
+        {
+            var firstNumber = Math.sign(document.getElementById("first-num").value);
+            var secondNumber = Math.sign(document.getElementById("second-num").value);
+            if(firstNumber != 0 && secondNumber !=0)
+            {
+                if(firstNumber == -1 && secondNumber == -1)
+                {
+                    document.getElementById("show").innerHTML = "Both two numbers are NEGATIVE";
+                }
+                else if(firstNumber == 1 && secondNumber == 1)
+                {
+                    document.getElementById("show").innerHTML = "Both two numbers are POSITIVE";
+                }
+                else if(firstNumber == 1 && secondNumber == -1)
+                {
+                    document.getElementById("show").innerHTML = "First Number is POSITIVE and Second Number is NEGATIVE";
+                }
+                else if(firstNumber == -1 && secondNumber == 1)
+                {
+                    document.getElementById("show").innerHTML = "First Number is NEGATIVE and Second Number is POSITIVE";
+                }
+            }
+            
+            else
+            {
+                if(firstNumber == 0 && secondNumber == 0)
+                {
+                    document.getElementById("show").innerHTML = "Both two numbers are ZERO";
+                }
+                else if(firstNumber == 0)
+                {
+                    if(secondNumber == 1)
+                    {
+                        document.getElementById("show").innerHTML = "First Number is ZERO and Second Number is POSITIVE";
+                    }
+                    else
+                    {
+                        document.getElementById("show").innerHTML = "First Number is ZERO and Second Number is NEGATIVE";
+                    }
+                }
+                else if(secondNumber == 0)
+                {
+                    if(firstNumber == 1)
+                    {
+                        document.getElementById("show").innerHTML = "First Number is POSITIVE and Second Number is ZERO";
+                    }
+                    else
+                    {
+                        document.getElementById("show").innerHTML = "First Number is NEGATIVE and Second Number is ZERO";
+                    }
+                }
+            }
+            
+        }
+    </script>
+    </body>
+</html>

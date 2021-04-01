@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Task42</title>
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h5>Rotate the elements left of a given array of integers of length 3</h5>
+        <form>
+            <div class="form-group">
+                <label for="user-array">Array</label>
+                <input type="text" class="form-control offset-4 col-sm-4" id="user-array" placeholder="Enter the string">
+            </div>
+            <button type="button" class="btn btn-success" onclick="rotateElementsLeft()">
+                click here
+            </button>
+        </form>
+        <div id="statement-div" style="display: none;font-size: 30px;">
+            <h3 class="text-dark mt-4" >New String</h3>
+            <p id="new-array" class="text-info mt-4" ></p>
+        </div>
+    </div>
+    <script>
+        function rotateElementsLeft() 
+        {
+            document.getElementById("statement-div").style.display = "block";
+            var userValue = document.getElementById("user-array").value;
+            var userArray  = [];
+            userArray = userValue.split(",");
+            var newArray = [];
+            newArray.push(userArray[1]);
+            newArray.push(userArray[2]);
+            newArray.push(userArray[0]);
+            document.getElementById("new-array").innerHTML = "[ " + newArray + " ]";
+        }
+    </script>
+    </body>
+</html>
